@@ -4,10 +4,9 @@ pipeline {
         pollSCM('* * * * *')
     }
     stages {
-        stage("Compile") {
-            steps {
-                sh "gradlew clean"
-            }
+        steps{
+            echo "------------>Compile & Unit Tests<------------"
+        	sh 'gradle --b ./build.gradle test'
         }
     }
 }
