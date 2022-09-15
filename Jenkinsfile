@@ -36,7 +36,7 @@ pipeline {
         stage('Sonar') {
             steps{
                 echo "------------>Sonar<------------"
-                withEnv(env.SONAR_TOKEN){
+                withSonarQubeEnv(env.SONAR_TOKEN){
                     sh 'gradlew sonarqube'
                 }
            }
