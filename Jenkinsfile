@@ -3,9 +3,7 @@ pipeline {
     triggers {
         pollSCM('* * * * *')
     }
-    environment {
-        SONAR_TOKEN = 'true'
-    }
+
     stages {
         stage('Clean') {
             steps{
