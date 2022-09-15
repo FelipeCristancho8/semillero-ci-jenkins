@@ -37,7 +37,7 @@ pipeline {
             steps{
                 echo "------------>Sonar<------------"
                 withSonarQubeEnv('SonarCloud'){
-                    sh 'gradlew sonarqube'
+                    bat 'gradlew sonarqube'
                 }
            }
         }
