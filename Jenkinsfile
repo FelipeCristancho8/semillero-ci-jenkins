@@ -33,14 +33,14 @@ pipeline {
             }
         }
 
-        stage('Sonar') {
-            steps{
-                echo "------------>Sonar<------------"
-                withSonarQubeEnv(){
-                    sh 'gradlew sonarqube'
-                }
-           }
-        }
+        //stage('Sonar') {
+        //    steps{
+        //        echo "------------>Sonar<------------"
+        //        withSonarQubeEnv(){
+        //            sh 'gradlew sonarqube'
+        //        }
+        //   }
+        // }
 
     }
 }
