@@ -4,10 +4,10 @@ pipeline {
         pollSCM('* * * * *')
     }
     stages {
-        stage('Compile') {
+        stage('Clean') {
             steps{
-                echo "------------>Compile<------------"
-                bat 'gradle build'
+                echo "------------>Clean<------------"
+                bat 'gradlew clean'
             }
         }
     }
