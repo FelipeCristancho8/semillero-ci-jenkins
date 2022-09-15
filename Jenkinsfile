@@ -3,6 +3,9 @@ pipeline {
     triggers {
         pollSCM('* * * * *')
     }
+    environment {
+        SONAR_TOKEN = 'true'
+    }
     stages {
         stage('Clean') {
             steps{
@@ -29,6 +32,12 @@ pipeline {
             steps{
                 echo "------------>Build<------------"
                 bat 'gradlew jacocoTestReport'
+            }
+        }
+
+        stage('Sonar') {
+            steps{
+                echo env.SONAR_TOKEN
             }
         }
 
