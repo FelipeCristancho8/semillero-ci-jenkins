@@ -23,20 +23,21 @@ pipeline {
 
         stage('Test') {
             steps{
-                echo "------------>Build<------------"
+                echo "------------>Test<------------"
                 bat 'gradlew test'
             }
         }
 
         stage('Jacoco') {
             steps{
-                echo "------------>Build<------------"
+                echo "------------>Jacoco<------------"
                 bat 'gradlew jacocoTestReport'
             }
         }
 
         stage('Sonar') {
             steps{
+            echo "------------>Sonar<------------"
                 echo env.SONAR_TOKEN
             }
         }
