@@ -4,10 +4,10 @@ pipeline {
         pollSCM('* * * * *')
     }
     stages {
-        stage('Compile & Unit Tests') {
+        stage('Compile') {
             steps{
-                echo "------------>Compile & Unit Tests<------------"
-                sh 'gradle build'
+                echo "------------>Compile<------------"
+                bat 'gradle build'
             }
         }
     }
