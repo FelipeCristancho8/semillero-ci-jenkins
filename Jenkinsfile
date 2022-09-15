@@ -36,11 +36,11 @@ pipeline {
         stage('Sonar') {
             steps{
                 echo "------------>Sonar<------------"
-                withSonarQubeEnv(){
+                withSonarQubeEnv(credentialsId: 'SONAR_TOKEN', installationName: 'SonarQube Server'){
                     sh 'gradlew sonarqube'
                 }
            }
-         }
+        }
 
     }
 }
