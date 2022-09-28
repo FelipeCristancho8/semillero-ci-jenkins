@@ -15,7 +15,6 @@ class WordCounterDefaultTest {
     void mustReturnCorrectSummary() throws IOException {
         Path resourceDirectory = Paths.get("src/test/resources");
         String absolutePath = resourceDirectory.toFile().getAbsolutePath();
-
         WordCounter wordCounter = new WordCounterDefault();
 
         Summary summary = wordCounter.process(absolutePath+ File.separator+"test.txt");

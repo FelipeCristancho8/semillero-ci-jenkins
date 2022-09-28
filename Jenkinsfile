@@ -7,35 +7,35 @@ pipeline {
     stages {
         stage('Clean') {
             steps{
-                echo "------------>Clean<------------"
+                echo "------------> Clean <------------"
                 bat 'gradlew clean'
             }
         }
 
         stage('Build') {
             steps{
-                echo "------------>Build<------------"
+                echo "------------> Build <------------"
                 bat 'gradlew build -x test'
             }
         }
 
         stage('Test') {
             steps{
-                echo "------------>Test<------------"
+                echo "------------> Test <------------"
                 bat 'gradlew test'
             }
         }
 
         stage('Jacoco') {
             steps{
-                echo "------------>Jacoco<------------"
+                echo "------------> Jacoco <------------"
                 bat 'gradlew jacocoTestReport'
             }
         }
 
         stage('Sonar') {
             steps{
-                echo "------------>Sonar<------------"
+                echo "------------> Sonar <------------"
                 withSonarQubeEnv('SonarCloud'){
                     bat 'gradlew sonarqube'
                 }
